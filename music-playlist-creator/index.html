@@ -3,20 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Music Playlist Explorer</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <!-- Your header content here -->
+         <h1 id="main-heading">Music Playlist Explorer</h1>
     </header>
 
-    <main> 
+    <main>
         <!-- Your main content here -->
+         <section class="playlist-cards">
+            <article onclick="openModal({img: './assets/song.png', title: 'Sacrifice', author: 'Black Sherrif', name: 'Sacrifice', duration: '0:00'})">
+                <img src="images/playlist-1.png" alt="Playlist 1">
+                <h2>Playlist Title</h2>
+                <p>Creator Name</p>
+                <div><span>👍</span> 5</div>
+            </article>
+
+            <article onclick="openModal({name: 'Summer Beats Festival', imageUrl: 'path/to/festival.jpg', dates: 'July 15-17', location: 'Downtown Park', lineup: ['Artist A', 'Artist B']})">
+                <img src="images/playlist-1.png" alt="Playlist 1">
+                <h2>Playlist Title</h2>
+                <p>Creator Name</p>
+                <div><span>👍</span> 5</div>
+            </article>
+
+            <article onclick="openModal({name: 'Summer Beats Festival', imageUrl: 'path/to/festival.jpg', dates: 'July 15-17', location: 'Downtown Park', lineup: ['Artist A', 'Artist B']})">
+                <img src="images/playlist-1.png" alt="Playlist 1">
+                <h2>Playlist Title</h2>
+                <p>Creator Name</p>
+                <div><span>👍</span> 5</div>
+            </article>
+
+            <article onclick="openModal({name: 'Summer Beats Festival', imageUrl: 'path/to/festival.jpg', dates: 'July 15-17', location: 'Downtown Park', lineup: ['Artist A', 'Artist B']})">
+                <img src="images/playlist-1.png" alt="Playlist 1">
+                <h2>Playlist Title</h2>
+                <p>Creator Name</p>
+                <div><span>👍</span> 5</div>
+            </article>
+
+            <article onclick="openModal({name: 'Summer Beats Festival', imageUrl: 'path/to/festival.jpg', dates: 'July 15-17', location: 'Downtown Park', lineup: ['Artist A', 'Artist B']})">
+                <img src="images/playlist-1.png" alt="Playlist 1">
+                <h2>Playlist Title</h2>
+                <p>Creator Name</p>
+                <div><span>👍</span> 5</div>
+            </article>
+
+            <article onclick="openModal({name: 'Summer Beats Festival', imageUrl: 'path/to/festival.jpg', dates: 'July 15-17', location: 'Downtown Park', lineup: ['Artist A', 'Artist B']})">
+                <img src="images/playlist-1.png" alt="Playlist 1">
+                <h2>Playlist Title</h2>
+                <p>Creator Name</p>
+                <div><span>👍</span> 5</div>
+            </article>
+
+            <article onclick="openModal({name: 'Summer Beats Festival', imageUrl: 'path/to/festival.jpg', dates: 'July 15-17', location: 'Downtown Park', lineup: ['Artist A', 'Artist B']})">
+                <img src="images/playlist-1.png" alt="Playlist 1">
+                <h2>Playlist Title</h2>
+                <p>Creator Name</p>
+                <div><span>👍</span> 5</div>
+            </article>
+
+            <article onclick="openModal({name: 'Summer Beats Festival', imageUrl: 'path/to/festival.jpg', dates: 'July 15-17', location: 'Downtown Park', lineup: ['Artist A', 'Artist B']})">
+                <img src="images/playlist-1.png" alt="Playlist 1">
+                <h2>Playlist Title</h2>
+                <p>Creator Name</p>
+                <div><span>👍</span> 5</div>
+            </article>
+
+         </section>
     </main>
+
+    <!-- Modal Structure -->
+     <div class="modal-overlay">
+<div id="festivalModal" class="modal">
+    <div class="modal-content">
+       <span class="close">&times;</span>
+<div class="modal-hero">
+       <img id="festivalImage" src="" alt="Festival Image">
+       <div>
+       <h1 id="festivalName"></h1>
+       <p id="festivalDates"></p>
+    </div>
+    </div>
+    <div class="modal-album-list">
+        <img class="modal-album-img" src=""/>
+        <div>
+        <p class="modal-album-title"></p>
+        <p class="modal-album-artist"></p>
+        <p class="modal-album-name"></p>
+    </div>
+        <p class="modal-album-duration"></p>
+    </div>
+    <div class="modal-album-list">
+        <img class="modal-album-img" src=""/>
+        <div>
+        <p class="modal-album-title"></p>
+        <p class="modal-album-artist"></p>
+        <p class="modal-album-name"></p>
+    </div>
+        <p class="modal-album-duration"></p>
+    </div>
+    <div class="modal-album-list">
+        <img class="modal-album-img" src=""/>
+        <div>
+        <p class="modal-album-title"></p>
+        <p class="modal-album-artist"></p>
+        <p class="modal-album-name"></p>
+    </div>
+        <p class="modal-album-duration"></p>
+    </div>
+
+    </div>
+ </div>
+</div>
 
     <footer>
         <!-- Your footer content here -->
