@@ -1,0 +1,178 @@
+[
+    {
+        "playlistID": 1,
+        "playlist_name": "Iron Boy",
+        "playlist_author": "Black Sherrif",
+        "playlist_art": "./assets/img/iron-buy.jpg",
+        "like_count": 0,
+        "songs": [
+            {
+                "title": "The Victory Song",
+                "duration" : "2:55",
+                "cover" : "./assets/img/rebel-music.jpg"
+
+            },
+            {
+                "title": "One",
+                "duration" : "3:20",
+                "cover" : "./assets/img/iron-buy.jpg"
+            },
+            {
+                "title": "So it Goes",
+                "duration" : "2:55",
+                "cover" : "./assets/img/iron-buy.jpg"
+            },
+            {
+                "title": "Sacrifice",
+                "duration" : "2:35",
+                "cover" : "./assets/img/iron-buy.jpg"
+            },
+            {
+                "title": "Dreamer",
+                "duration" : "2:20",
+                "cover" : "./assets/img/iron-buy.jpg"
+            }
+
+        ]
+    },
+    {
+        "playlistID": 2,
+        "playlist_name": "Graduation",
+        "playlist_author": "Kanye West",
+        "playlist_art": "./assets/img/iron-buy.jpg",
+        "like_count": 0,
+        "songs": [
+            {
+                "title": "Good Morning",
+                "duration" : "2:55",
+                "cover" : "./assets/img/sad-boys.jpg"
+            },
+            {
+                "title": "One",
+                "duration" : "3:20",
+                "cover" : "./assets/img/iron-buy.jpg"
+            },
+            {
+                "title": "So it Goes",
+                "duration" : "2:55",
+                "cover" : "./assets/img/iron-buy.jpg"
+            },
+            {
+                "title": "Sacrifice",
+                "duration" : "2:35",
+                "cover" : "./assets/img/iron-buy.jpg"
+            },
+            {
+                "title": "Dreamer",
+                "duration" : "2:20",
+                "cover" : "./assets/img/iron-buy.jpg"
+            }
+
+        ]
+    },
+    {
+        "playlistID": 3,
+        "playlist_name": "Hit me hard and soft",
+        "playlist_author": "Billie Eilish",
+        "playlist_art": "./assets/img/iron-buy.jpg",
+        "like_count": 0,
+        "songs": [
+            {
+                "title": "The Victory Song",
+                "duration" : "2:55",
+                "cover" : "./assets/img/iron-buy.jpg"
+            },
+            {
+                "title": "One",
+                "duration" : "3:20",
+                "cover" : "./assets/img/iron-buy.jpg"
+            },
+            {
+                "title": "So it Goes",
+                "duration" : "2:55",
+                "cover" : "./assets/img/iron-buy.jpg"
+            },
+            {
+                "title": "Sacrifice",
+                "duration" : "2:35",
+                "cover" : "./assets/img/iron-buy.jpg"
+            },
+            {
+                "title": "Dreamer",
+                "duration" : "2:20",
+                "cover" : "./assets/img/iron-buy.jpg"
+            }
+
+        ]
+    },
+    {
+        "playlistID": 4,
+        "playlist_name": "Iron Boy",
+        "playlist_author": "Black Sherrif",
+        "playlist_art": "./assets/img/iron-buy.jpg",
+        "like_count": 0,
+        "songs": [
+            {
+                "title": "The Victory Song",
+                "duration" : "2:55",
+                "cover" : "./assets/img/iron-buy.jpg"
+            },
+            {
+                "title": "One",
+                "duration" : "3:20",
+                "cover" : "./assets/img/iron-buy.jpg"
+            },
+            {
+                "title": "So it Goes",
+                "duration" : "2:55",
+                "cover" : "./assets/img/iron-buy.jpg"
+            },
+            {
+                "title": "Sacrifice",
+                "duration" : "2:35",
+                "cover" : "./assets/img/iron-buy.jpg"
+            },
+            {
+                "title": "Dreamer",
+                "duration" : "2:20",
+                "cover" : "./assets/img/iron-buy.jpg"
+            }
+
+        ]
+    },
+    {
+        "playlistID": 5,
+        "playlist_name": "Iron Boy",
+        "playlist_author": "Black Sherrif",
+        "playlist_art": "./assets/img/iron-buy.jpg",
+        "like_count": 0,
+        "songs": [
+            {
+                "title": "The Victory Song",
+                "duration" : "2:55",
+                "cover" : "./assets/img/iron-buy.jpg"
+            },
+            {
+                "title": "One",
+                "duration" : "3:20",
+                "cover" : "./assets/img/iron-buy.jpg"
+            },
+            {
+                "title": "So it Goes",
+                "duration" : "2:55",
+                "cover" : "./assets/img/iron-buy.jpg"
+            },
+            {
+                "title": "Sacrifice",
+                "duration" : "2:35",
+                "cover" : "./assets/img/iron-buy.jpg"
+            },
+            {
+                "title": "Dreamer",
+                "duration" : "2:20",
+                "cover" : "./assets/img/iron-buy.jpg"
+            }
+
+        ]
+    }
+]

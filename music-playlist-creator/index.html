@@ -17,7 +17,7 @@
 
     <main>
         <!-- Your main content here -->
-         <section class="playlist-cards">
+        <!-- <section class="playlist-cards">
             <div class="cards">
             <article class="card-article"  onclick="openModal({img: './assets/img/iron-buy.jpg', title: 'Iron Boy', author: 'Black Sherrif', name: 'Iron Boy', duration: '3:45'})">
 
@@ -130,11 +130,15 @@
             </article>
         </div>
 
+         </section> -->
+
+         <section class="playlist-cards" id="playlist-cards">
+            <!-- Playlist cards will be dynamically loaded here -->
          </section>
     </main>
 
     <!-- Modal Structure -->
-     <div class="modal-overlay">
+     <div class="modal-overlay close">
 <div id="festivalModal" class="modal">
     <div class="modal-content">
        <span class="close">&times;</span>
@@ -173,6 +177,26 @@
         <p class="modal-album-duration"></p>
     </div>
 
+    <div class="modal-album-list">
+        <img class="modal-album-img" src=""/>
+        <div>
+        <p class="modal-album-title"></p>
+        <p class="modal-album-artist"></p>
+        <p class="modal-album-name"></p>
+    </div>
+        <p class="modal-album-duration"></p>
+    </div>
+
+    <div class="modal-album-list">
+        <img class="modal-album-img" src=""/>
+        <div>
+        <p class="modal-album-title"></p>
+        <p class="modal-album-artist"></p>
+        <p class="modal-album-name"></p>
+    </div>
+        <p class="modal-album-duration"></p>
+    </div>
+
     </div>
  </div>
 </div>
@@ -182,7 +206,7 @@
          <p>Copyright &copy; 2025 Music Playlist Explorer</p>
          <p>Created by <a href="#">ebenezer</a></p>
     </footer>
-    <!-- <script src="data/data.js"></script> -->
+    <!-- JSON data is loaded via fetch in script.js -->
     <script src="script.js"></script>
 </body>
 </html>

@@ -3,18 +3,14 @@ const modal = document.getElementById("festivalModal");
 const modalOverlay = document.querySelector(".modal-overlay");
 const span = document.getElementsByClassName("close")[0];
 
-function openModal(festival) {
+function openModal(playlist) {
    // Update the modal header with the clicked album info
-   document.getElementById('festivalName').innerText = festival.title;
-   document.getElementById('festivalImage').src = festival.img;
-   document.getElementById('festivalDates').innerText = festival.author;
+   document.getElementById('festivalName').innerText = playlist.playlist_name;
+   document.getElementById('festivalImage').src = playlist.playlist_art;
+   document.getElementById('festivalDates').innerText = playlist.playlist_author;
 
-   // Create some sample tracks for the album
-   const tracks = [
-      { title: festival.title + " - Original Mix", duration: "3:45" },
-      { title: festival.title + " - Radio Edit", duration: "2:55" },
-      { title: festival.title + " - Extended Mix", duration: "5:20" }
-   ];
+   // Get the actual songs from the playlist
+   const songs = playlist.songs || [];
 
    // Update all album list items
    const albumImgs = document.querySelectorAll(".modal-album-img");
@@ -23,13 +19,13 @@ function openModal(festival) {
    const albumNames = document.querySelectorAll(".modal-album-name");
    const albumDurations = document.querySelectorAll(".modal-album-duration");
 
-   // Set values for each album list item with different track variations
-   for (let i = 0; i < albumImgs.length && i < tracks.length; i++) {
-      albumImgs[i].src = festival.img;
-      albumTitles[i].innerText = tracks[i].title;
-      albumArtists[i].innerText = festival.author;
-      albumNames[i].innerText = "Track " + (i + 1);
-      albumDurations[i].innerText = tracks[i].duration;
+   // Set values for each album list item with actual songs
+   for (let i = 0; i < albumImgs.length && i < songs.length; i++) {
+      albumImgs[i].src = songs[i].cover;
+      albumTitles[i].innerText = songs[i].title;
+      albumArtists[i].innerText = playlist.playlist_author;
+      albumNames[i].innerText = songs[i].title;
+      albumDurations[i].innerText = songs[i].duration;
    }
 
    // Show the modal overlay
@@ -44,50 +40,93 @@ window.onclick = function(event) {
       modalOverlay.style.display = "none";
    }
 }
-// Handle like buttons
-const likeButtons = document.querySelectorAll(".like-button");
-const unlikeButtons = document.querySelectorAll(".unlike-button");
+// Event listeners for like/unlike buttons will be added after the playlists are loaded
 
-likeButtons.forEach(button => {
-   button.addEventListener("click", function(event) {
-      // Stop event propagation to prevent modal from opening
-      event.stopPropagation();
 
-      // Find the parent container
-      const container = this.closest(".num-of-likes, .num-of-like");
+window.addEventListener("DOMContentLoaded", () => {
+    const playlistContainer = document.querySelector("#playlist-cards");
 
-      // Find the like count element within the container
-      const likeCountElement = container.querySelector(".like-count");
+    if (!playlistContainer) {
+        console.error("Playlist container not found!");
+        return;
+    }
 
-      if (likeCountElement) {
-         // Get current count and increment it
-         let count = parseInt(likeCountElement.textContent);
-         count++;
+    fetch("./data/data.json")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(playlists => {
+        console.log("Playlists loaded:", playlists); // Debug log
 
-         // Update the like count
-         likeCountElement.textContent = count;
-      }
-   });
+        if(!playlists || playlists.length === 0) {
+            playlistContainer.innerHTML = "<p class='no-playlists'>No playlists found</p>";
+            return;
+        }
+
+        // Clear existing hardcoded content
+        playlistContainer.innerHTML = "";
+
+        playlists.forEach(playlist => {
+            const card = document.createElement("div");
+            card.className = 'cards';
+            card.innerHTML = `
+            <article class="card-article">
+                <img src="${playlist.playlist_art}" alt="Playlist Art">
+                <div class="album-info">
+                    <h3 class="playlist-title">${playlist.playlist_name}</h3>
+                    <p class="artiste-name">${playlist.playlist_author}</p>
+                    <div class="num-of-likes">
+                        <span class="like-button" id="like">👍</span>
+                        <span class="unlike-button" id="unlike">👎</span>
+                        <span class="like-count">${playlist.like_count || 0}</span>
+                    </div>
+                </div>
+            </article>`;
+
+            card.querySelector('.card-article').onclick = () => {
+                // Pass the entire playlist object to openModal
+                openModal(playlist);
+            };
+            playlistContainer.appendChild(card);
+        });
+
+playlistContainer.querySelectorAll('.like-button').forEach(button => {
+    button.addEventListener('click', function(event) {
+        event.stopPropagation();
+        const container = this.closest('.num-of-likes, .num-of-like');
+        const likeCountElement = container.querySelector('.like-count');
+        if(likeCountElement) {
+            let count = parseInt(likeCountElement.textContent);
+            count++;
+            likeCountElement.textContent = count;
+        }});
+
 });
 
-unlikeButtons.forEach(button => {
-   button.addEventListener("click", function(event) {
-      // Stop event propagation to prevent modal from opening
-      event.stopPropagation();
+playlistContainer.querySelectorAll('.unlike-button').forEach(button => {
+    button.addEventListener('click', function(event) {
+        event.stopPropagation();
+        const container = this.closest('.num-of-likes, .num-of-like');
+        const likeCountElement = container.querySelector('.like-count');
+        if(likeCountElement) {
+            let count = parseInt(likeCountElement.textContent);
+            count--;
+            likeCountElement.textContent = count;
+        }});
 
-      // Find the parent container
-      const container = this.closest(".num-of-likes, .num-of-like");
-
-      // Find the like count element within the container
-      const likeCountElement = container.querySelector(".like-count");
-
-      if (likeCountElement) {
-         // Get current count and decrement it
-         let count = parseInt(likeCountElement.textContent);
-         count--;
-
-         // Update the like count
-         likeCountElement.textContent = count;
-      }
-   });
 });
+
+
+
+})
+.catch(err => {
+    playlistContainer.innerHTML = '<p class="no-playlists">Failed to load playlists</p>';
+
+});
+});
+
+
+
