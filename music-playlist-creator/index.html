@@ -10,69 +10,125 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header id="header">
         <!-- Your header content here -->
-         <h1 id="main-heading">Music Playlist Explorer</h1>
+         <h1 id="main-heading">Listen to the Poet</h1>
     </header>
 
     <main>
         <!-- Your main content here -->
          <section class="playlist-cards">
-            <article onclick="openModal({img: './assets/song.png', title: 'Sacrifice', author: 'Black Sherrif', name: 'Sacrifice', duration: '0:00'})">
-                <img src="images/playlist-1.png" alt="Playlist 1">
-                <h2>Playlist Title</h2>
-                <p>Creator Name</p>
-                <div><span>👍</span> 5</div>
-            </article>
+            <div class="cards">
+            <article class="card-article"  onclick="openModal({img: './assets/img/iron-buy.jpg', title: 'Iron Boy', author: 'Black Sherrif', name: 'Iron Boy', duration: '3:45'})">
 
-            <article onclick="openModal({name: 'Summer Beats Festival', imageUrl: 'path/to/festival.jpg', dates: 'July 15-17', location: 'Downtown Park', lineup: ['Artist A', 'Artist B']})">
-                <img src="images/playlist-1.png" alt="Playlist 1">
-                <h2>Playlist Title</h2>
-                <p>Creator Name</p>
-                <div><span>👍</span> 5</div>
-            </article>
+                <img  src="./assets/img/iron-buy.jpg" alt="Playlist 1">
+                <div class="album-info">
+                <h3 class="playlist-title">Iron Boy</h3>
+                <p class="artiste-name">Black Sherrif</p>
+                <div class="num-of-likes"><span class="like-button">👍</span> <span class="unlike-button">👎</span> <span class="like-count">0</span></div>
 
-            <article onclick="openModal({name: 'Summer Beats Festival', imageUrl: 'path/to/festival.jpg', dates: 'July 15-17', location: 'Downtown Park', lineup: ['Artist A', 'Artist B']})">
-                <img src="images/playlist-1.png" alt="Playlist 1">
-                <h2>Playlist Title</h2>
-                <p>Creator Name</p>
-                <div><span>👍</span> 5</div>
-            </article>
+            </div>
 
-            <article onclick="openModal({name: 'Summer Beats Festival', imageUrl: 'path/to/festival.jpg', dates: 'July 15-17', location: 'Downtown Park', lineup: ['Artist A', 'Artist B']})">
-                <img src="images/playlist-1.png" alt="Playlist 1">
-                <h2>Playlist Title</h2>
-                <p>Creator Name</p>
-                <div><span>👍</span> 5</div>
             </article>
+        </div>
 
-            <article onclick="openModal({name: 'Summer Beats Festival', imageUrl: 'path/to/festival.jpg', dates: 'July 15-17', location: 'Downtown Park', lineup: ['Artist A', 'Artist B']})">
-                <img src="images/playlist-1.png" alt="Playlist 1">
-                <h2>Playlist Title</h2>
-                <p>Creator Name</p>
-                <div><span>👍</span> 5</div>
-            </article>
+        <div class="cards">
+            <article class="card-article"  onclick="openModal({img: './assets/img/kwaku-the-traveller.jpg', title: 'Kwaku the traveller', author: 'Black Sherrif', name: 'Kwaku the traveller', duration: '3:21'})">
 
-            <article onclick="openModal({name: 'Summer Beats Festival', imageUrl: 'path/to/festival.jpg', dates: 'July 15-17', location: 'Downtown Park', lineup: ['Artist A', 'Artist B']})">
-                <img src="images/playlist-1.png" alt="Playlist 1">
-                <h2>Playlist Title</h2>
-                <p>Creator Name</p>
-                <div><span>👍</span> 5</div>
-            </article>
+                <img  src="./assets/img/kwaku-the-traveller.jpg" alt="Playlist 1">
+                <div class="album-info">
+                <h3 class="playlist-title">Kwaku the traveller</h3>
+                <p class="artiste-name">Black Sherrif</p>
+                <div class="num-of-likes"><span class="like-button">👍</span> <span class="unlike-button">👎</span> <span class="like-count">0</span></div>
 
-            <article onclick="openModal({name: 'Summer Beats Festival', imageUrl: 'path/to/festival.jpg', dates: 'July 15-17', location: 'Downtown Park', lineup: ['Artist A', 'Artist B']})">
-                <img src="images/playlist-1.png" alt="Playlist 1">
-                <h2>Playlist Title</h2>
-                <p>Creator Name</p>
-                <div><span>👍</span> 5</div>
-            </article>
+            </div>
 
-            <article onclick="openModal({name: 'Summer Beats Festival', imageUrl: 'path/to/festival.jpg', dates: 'July 15-17', location: 'Downtown Park', lineup: ['Artist A', 'Artist B']})">
-                <img src="images/playlist-1.png" alt="Playlist 1">
-                <h2>Playlist Title</h2>
-                <p>Creator Name</p>
-                <div><span>👍</span> 5</div>
             </article>
+        </div>
+
+        <div class="cards">
+            <article class="card-article"  onclick="openModal({img: './assets/img/rebel-music.jpg', title: 'Rebel Music', author: 'Black Sherrif', name: 'Rebel Music', duration: '3:15'})">
+
+                <img  src="./assets/img/rebel-music.jpg" alt="Playlist 1">
+                <div class="album-info">
+                <h3 class="playlist-title">Rebel Music</h3>
+                <p class="artiste-name">Black Sherrif</p>
+                <div class="num-of-likes"><span class="like-button">👍</span> <span class="unlike-button">👎</span> <span class="like-count">0</span></div>
+
+            </div>
+
+            </article>
+        </div>
+
+        <div class="cards">
+            <article class="card-article"  onclick="openModal({img: './assets/img/sad-boys.jpg', title: 'Sad Boys', author: 'Black Sherrif', name: 'Sad Boys', duration: '3:30'})">
+
+                <img  src="./assets/img/sad-boys.jpg" alt="Playlist 1">
+                <div class="album-info">
+                <h3 class="playlist-title">Sad Boys</h3>
+                <p class="artiste-name">Black Sherrif</p>
+                <div class="num-of-likes"><span class="like-button">👍</span> <span class="unlike-button">👎</span> <span class="like-count">0</span></div>
+
+            </div>
+
+            </article>
+        </div>
+
+        <div class="cards">
+            <article class="card-article"  onclick="openModal({img: './assets/img/shut-up.jpeg', title: 'Shut Up', author: 'Black Sherrif', name: 'Shut Up', duration: '3:10'})">
+
+                <img  src="./assets/img/shut-up.jpeg" alt="Playlist 1">
+                <div class="album-info">
+                <h3 class="playlist-title">Shut Up</h3>
+                <p class="artiste-name">Black Sherrif</p>
+                <div class="num-of-likes"><span class="like-button">👍</span> <span class="unlike-button">👎</span> <span class="like-count">0</span></div>
+
+            </div>
+
+            </article>
+        </div>
+
+        <div class="cards">
+            <article class="card-article"  onclick="openModal({img: './assets/img/simmer-down.png', title: 'Simmer Down', author: 'Black Sherrif', name: 'Simmer Down', duration: '3:25'})">
+                <img  src="./assets/img/simmer-down.png" alt="Playlist 1">
+                <div class="album-info">
+                <h3 class="playlist-title">Simmer Down</h3>
+                <p class="artiste-name">Black Sherrif</p>
+                <div class="num-of-likes"><span class="like-button">👍</span> <span class="unlike-button">👎</span> <span class="like-count">0</span></div>
+            </div>
+            </div>
+
+
+            </article>
+        </div>
+
+        <div class="cards">
+            <article class="card-article"  onclick="openModal({img: './assets/img/soja.jpeg', title: 'Soja', author: 'Black Sherrif', name: 'Soja', duration: '3:18'})">
+
+                <img  src="./assets/img/soja.jpeg" alt="Playlist 1">
+                <div class="album-info">
+                <h3 class="playlist-title">Soja</h3>
+                <p class="artiste-name">Black Sherrif</p>
+                <div class="num-of-likes"><span class="like-button">👍</span> <span class="unlike-button">👎</span> <span class="like-count">0</span></div>
+
+            </div>
+
+            </article>
+        </div>
+
+        <div class="cards">
+            <article class="card-article"  onclick="openModal({img: './assets/img/iron-buy.jpg', title: 'Iron Boy', author: 'Black Sherrif', name: 'Iron Boy', duration: '3:45'})">
+
+                <img  src="./assets/img/iron-buy.jpg" alt="Playlist 1">
+                <div class="album-info">
+                <h3 class="playlist-title">Iron Boy</h3>
+                <p class="artiste-name">Black Sherrif</p>
+                <div class="num-of-likes"><span class="like-button">👍</span> <span class="unlike-button">👎</span> <span class="like-count">0</span></div>
+
+            </div>
+
+            </article>
+        </div>
 
          </section>
     </main>
@@ -121,10 +177,12 @@
  </div>
 </div>
 
-    <footer>
+    <footer id="footer">
         <!-- Your footer content here -->
+         <p>Copyright &copy; 2025 Music Playlist Explorer</p>
+         <p>Created by <a href="#">ebenezer</a></p>
     </footer>
-    <script src="data/data.js"></script>
+    <!-- <script src="data/data.js"></script> -->
     <script src="script.js"></script>
 </body>
 </html>
