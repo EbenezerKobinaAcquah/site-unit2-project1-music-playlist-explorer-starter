@@ -9,28 +9,28 @@
             {
                 "title": "The Victory Song",
                 "duration" : "2:55",
-                "cover" : "./assets/img/rebel-music.jpg"
+                "cover" : "./assets/img/sad-boys.jpg"
 
             },
             {
                 "title": "One",
                 "duration" : "3:20",
-                "cover" : "./assets/img/iron-buy.jpg"
+                "cover" : "./assets/img/kwaku-the-traveller.jpg"
             },
             {
                 "title": "So it Goes",
                 "duration" : "2:55",
-                "cover" : "./assets/img/iron-buy.jpg"
+                "cover" : "./assets/img/rebel-music.jpg"
             },
             {
                 "title": "Sacrifice",
                 "duration" : "2:35",
-                "cover" : "./assets/img/iron-buy.jpg"
+                "cover" : "./assets/img/shut-up.jpeg"
             },
             {
                 "title": "Dreamer",
                 "duration" : "2:20",
-                "cover" : "./assets/img/iron-buy.jpg"
+                "cover" : "./assets/img/soja.jpeg"
             }
 
         ]
@@ -39,33 +39,33 @@
         "playlistID": 2,
         "playlist_name": "Graduation",
         "playlist_author": "Kanye West",
-        "playlist_art": "./assets/img/iron-buy.jpg",
+        "playlist_art": "./assets/img/graduation.jpg",
         "like_count": 0,
         "songs": [
             {
-                "title": "Good Morning",
+                "title": "Flashing Lights",
                 "duration" : "2:55",
-                "cover" : "./assets/img/sad-boys.jpg"
+                "cover" : "./assets/img/flashing-lights.png"
             },
             {
-                "title": "One",
+                "title": "Heartless",
                 "duration" : "3:20",
-                "cover" : "./assets/img/iron-buy.jpg"
+                "cover" : "./assets/img/heartless.jpg"
             },
             {
-                "title": "So it Goes",
+                "title": "I wonder",
                 "duration" : "2:55",
-                "cover" : "./assets/img/iron-buy.jpg"
+                "cover" : "./assets/img/i-wonder.jpg"
             },
             {
-                "title": "Sacrifice",
+                "title": "All falls down",
                 "duration" : "2:35",
-                "cover" : "./assets/img/iron-buy.jpg"
+                "cover" : "./assets/img/all-falls-down.webp"
             },
             {
-                "title": "Dreamer",
+                "title": "Violent crimes",
                 "duration" : "2:20",
-                "cover" : "./assets/img/iron-buy.jpg"
+                "cover" : "./assets/img/violent-cirmes.jpg"
             }
 
         ]
@@ -74,93 +74,94 @@
         "playlistID": 3,
         "playlist_name": "Hit me hard and soft",
         "playlist_author": "Billie Eilish",
-        "playlist_art": "./assets/img/iron-buy.jpg",
+        "playlist_art": "./assets/img/hit-me-hard-and-soft.png",
         "like_count": 0,
         "songs": [
             {
-                "title": "The Victory Song",
+                "title": "Skinny",
                 "duration" : "2:55",
-                "cover" : "./assets/img/iron-buy.jpg"
+                "cover" : "./assets/img/skinny.jpeg"
             },
             {
-                "title": "One",
+                "title": "Lunch",
                 "duration" : "3:20",
-                "cover" : "./assets/img/iron-buy.jpg"
+                "cover" : "./assets/img/lunch.png"
             },
             {
-                "title": "So it Goes",
+                "title": "Chihiro",
                 "duration" : "2:55",
-                "cover" : "./assets/img/iron-buy.jpg"
+                "cover" : "./assets/img/chihiro.jpg"
             },
             {
-                "title": "Sacrifice",
+                "title": "Birds of a feather",
                 "duration" : "2:35",
-                "cover" : "./assets/img/iron-buy.jpg"
+                "cover" : "./assets/img/birds-of-a-feather.jpeg"
             },
             {
-                "title": "Dreamer",
+                "title": "Wildflower",
                 "duration" : "2:20",
-                "cover" : "./assets/img/iron-buy.jpg"
+                "cover" : "./assets/img/wildflower.jpg"
             }
 
         ]
     },
     {
         "playlistID": 4,
-        "playlist_name": "Iron Boy",
+        "playlist_name": "Kwaku the traveller",
         "playlist_author": "Black Sherrif",
-        "playlist_art": "./assets/img/iron-buy.jpg",
+        "playlist_art": "./assets/img/kwaku-the-traveller.jpg",
         "like_count": 0,
         "songs": [
             {
                 "title": "The Victory Song",
                 "duration" : "2:55",
-                "cover" : "./assets/img/iron-buy.jpg"
+                "cover" : "./assets/img/sad-boys.jpg"
+
             },
             {
                 "title": "One",
                 "duration" : "3:20",
-                "cover" : "./assets/img/iron-buy.jpg"
+                "cover" : "./assets/img/kwaku-the-traveller.jpg"
             },
             {
                 "title": "So it Goes",
                 "duration" : "2:55",
-                "cover" : "./assets/img/iron-buy.jpg"
+                "cover" : "./assets/img/rebel-music.jpg"
             },
             {
                 "title": "Sacrifice",
                 "duration" : "2:35",
-                "cover" : "./assets/img/iron-buy.jpg"
+                "cover" : "./assets/img/shut-up.jpeg"
             },
             {
                 "title": "Dreamer",
                 "duration" : "2:20",
-                "cover" : "./assets/img/iron-buy.jpg"
+                "cover" : "./assets/img/soja.jpeg"
             }
 
         ]
     },
     {
         "playlistID": 5,
-        "playlist_name": "Iron Boy",
+        "playlist_name": "Soja",
         "playlist_author": "Black Sherrif",
-        "playlist_art": "./assets/img/iron-buy.jpg",
+        "playlist_art": "./assets/img/soja.jpeg",
         "like_count": 0,
         "songs": [
             {
-                "title": "The Victory Song",
+                "title": "The Homeless Song",
                 "duration" : "2:55",
-                "cover" : "./assets/img/iron-buy.jpg"
+                "cover" : "./assets/img/sad-boys.jpg"
             },
             {
-                "title": "One",
+                "title": "Oil in my head",
                 "duration" : "3:20",
-                "cover" : "./assets/img/iron-buy.jpg"
+                "cover" : "./assets/img/simmer-down.png"
             },
             {
                 "title": "So it Goes",
                 "duration" : "2:55",
-                "cover" : "./assets/img/iron-buy.jpg"
+                "cover" : "./assets/img/rebel-music.jpg"
             },
             {
                 "title": "Sacrifice",
@@ -170,7 +171,112 @@
             {
                 "title": "Dreamer",
                 "duration" : "2:20",
+                "cover" : "./assets/img/kwaku-the-traveller.jpg"
+            }
+
+        ]
+    },
+    {
+        "playlistID": 6,
+        "playlist_name": "The life of Pablo",
+        "playlist_author": "Kanye West",
+        "playlist_art": "./assets/img/all-falls-down.webp",
+        "like_count": 0,
+        "songs": [
+            {
+                "title": "The Victory Song",
+                "duration" : "2:55",
+                "cover" : "./assets/img/violent-cirmes.jpg"
+            },
+            {
+                "title": "One",
+                "duration" : "3:20",
+                "cover" : "./assets/img/i-wonder.jpg"
+            },
+            {
+                "title": "So it Goes",
+                "duration" : "2:55",
+                "cover" : "./assets/img/heartless.jpg"
+            },
+            {
+                "title": "Sacrifice",
+                "duration" : "2:35",
+                "cover" : "./assets/img/graduation.jpg"
+            },
+            {
+                "title": "Dreamer",
+                "duration" : "2:20",
+                "cover" : "./assets/img/flashing-lights.png"
+            }
+
+        ]
+    },
+    {
+        "playlistID": 5,
+        "playlist_name": "Villian I never was",
+        "playlist_author": "Black Sherrif",
+        "playlist_art": "./assets/img/simmer-down.png",
+        "like_count": 0,
+        "songs": [
+            {
+                "title": "The Victory Song",
+                "duration" : "2:55",
+                "cover" : "./assets/img/kwaku-the-traveller.jpg"
+            },
+            {
+                "title": "One",
+                "duration" : "3:20",
                 "cover" : "./assets/img/iron-buy.jpg"
+            },
+            {
+                "title": "So it Goes",
+                "duration" : "2:55",
+                "cover" : "./assets/img/sad-boys.jpg"
+            },
+            {
+                "title": "Sacrifice",
+                "duration" : "2:35",
+                "cover" : "./assets/img/simmer-down.png"
+            },
+            {
+                "title": "Dreamer",
+                "duration" : "2:20",
+                "cover" : "./assets/img/soja.jpeg"
+            }
+
+        ]
+    },
+    {
+        "playlistID": 5,
+        "playlist_name": "Bound 2",
+        "playlist_author": "Kanye West",
+        "playlist_art": "./assets/img/birds-of-a-feather.jpeg",
+        "like_count": 0,
+        "songs": [
+            {
+                "title": "The Victory Song",
+                "duration" : "2:55",
+                "cover" : "./assets/img/all-falls-down.webp"
+            },
+            {
+                "title": "One",
+                "duration" : "3:20",
+                "cover" : "./assets/img/birds-of-a-feather.jpeg"
+            },
+            {
+                "title": "So it Goes",
+                "duration" : "2:55",
+                "cover" : "./assets/img/graduation.jpg"
+            },
+            {
+                "title": "Sacrifice",
+                "duration" : "2:35",
+                "cover" : "./assets/img/violent-cirmes.jpg"
+            },
+            {
+                "title": "Dreamer",
+                "duration" : "2:20",
+                "cover" : "./assets/img/i-wonder.jpg"
             }
 
         ]

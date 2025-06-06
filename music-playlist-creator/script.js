@@ -9,7 +9,7 @@ let currentPlaylist = null;
 // --- Playlist Data Management ---
 const PLAYLISTS_KEY = 'playlists';
 let playlists = [];
-let editIndex = null; // null for add, index for edit
+let editIndex = null;
 
 // --- DOM Elements ---
 const playlistContainer = document.querySelector('#playlist-cards');
@@ -27,25 +27,17 @@ const addSongBtn = document.getElementById('addSongBtn');
 function shuffleArray(array) {
    // Create a copy of the array to avoid modifying the original
    const shuffled = [...array];
-
-   // Fisher-Yates shuffle algorithm
    for (let i = shuffled.length - 1; i > 0; i--) {
-      // Generate a random index from 0 to i
       const j = Math.floor(Math.random() * (i + 1));
-      // Swap elements at indices i and j
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
    }
-
    return shuffled;
 }
 
 // Function to update the modal with songs
 function updateModalWithSongs(songs, playlistAuthor) {
-   // Remove all previous song elements
    const modalContent = document.querySelector('#festivalModal .modal-content');
-   // Remove all .modal-album-list elements
    modalContent.querySelectorAll('.modal-album-list').forEach(el => el.remove());
-   // Add a .modal-album-list for each song
    songs.forEach(song => {
       const songDiv = document.createElement('div');
       songDiv.className = 'modal-album-list';
@@ -63,32 +55,29 @@ function updateModalWithSongs(songs, playlistAuthor) {
 }
 
 function openModal(playlist) {
-   // Store the current playlist for shuffling
+
    currentPlaylist = playlist;
 
-   // Update the modal header with the clicked album info
+
    document.getElementById('festivalName').innerText = playlist.playlist_name;
    document.getElementById('festivalImage').src = playlist.playlist_art;
    document.getElementById('festivalDates').innerText = playlist.playlist_author;
 
-   // Get the actual songs from the playlist
+
    const songs = playlist.songs || [];
 
-   // Update the modal with songs
+
    updateModalWithSongs(songs, playlist.playlist_author);
 
-   // Show the modal overlay
+
    modalOverlay.style.display = "block";
 }
 
-// Add event listener for shuffle button
 const shuffleButton = document.getElementById('shuffleButton');
 if (shuffleButton) {
   shuffleButton.addEventListener('click', function() {
     if (currentPlaylist && currentPlaylist.songs) {
-      // Shuffle the songs
       const shuffledSongs = shuffleArray(currentPlaylist.songs);
-      // Update the modal with shuffled songs
       updateModalWithSongs(shuffledSongs, currentPlaylist.playlist_author);
     }
   });
@@ -158,7 +147,7 @@ function addSongFields(song = {}) {
   div.innerHTML = `
     <input type="text" name="songTitle" placeholder="Song Title" value="${song.title || ''}" required>
     <input type="text" name="songArtist" placeholder="Artist" value="${song.artist || ''}" required>
-    <input type="text" name="songDuration" placeholder="Duration (e.g. 3:45)" value="${song.duration || ''}" required>
+    <input type="text" name="songDuration" placeholder="Duration " value="${song.duration || ''}" required>
     <button type="button" class="removeSongBtn">Remove</button>
   `;
   div.querySelector('.removeSongBtn').onclick = () => div.remove();
@@ -174,7 +163,6 @@ playlistForm.onsubmit = function(e) {
   const coverInput = document.getElementById('playlistCover');
   let cover = coverInput.value.trim();
   if (editIndex !== null) {
-    // Edit: if cover is blank, keep the old one
     if (!cover) cover = playlists[editIndex].playlist_art;
   }
   if (editIndex === null && !cover) {
@@ -183,12 +171,24 @@ playlistForm.onsubmit = function(e) {
     return;
   }
   const songDivs = songsContainer.querySelectorAll('.song-fields');
-  const songs = Array.from(songDivs).map(div => ({
-    title: div.querySelector('input[name="songTitle"]').value.trim(),
-    artist: div.querySelector('input[name="songArtist"]').value.trim(),
-    duration: div.querySelector('input[name="songDuration"]').value.trim(),
-    cover: cover // Use playlist cover for all songs
-  }));
+  const songs = Array.from(songDivs).map(div => {
+    let songCover = cover;
+
+    if (editIndex !== null) {
+      const title = div.querySelector('input[name="songTitle"]').value.trim();
+      const existingSong = playlists[editIndex].songs.find(s => s.title === title);
+      if (existingSong && existingSong.cover) {
+        songCover = existingSong.cover;
+      }
+    }
+
+    return {
+      title: div.querySelector('input[name="songTitle"]').value.trim(),
+      artist: div.querySelector('input[name="songArtist"]').value.trim(),
+      duration: div.querySelector('input[name="songDuration"]').value.trim(),
+      cover: songCover
+    };
+  });
   const playlist = {
     playlist_name: name,
     playlist_author: author,
@@ -305,96 +305,18 @@ sortDropdown.onchange = renderPlaylists;
 
 // --- Initial Load ---
 window.addEventListener('DOMContentLoaded', () => {
-  loadPlaylists().then(renderPlaylists);
+  // Clear localStorage to force reload from data.json
+  localStorage.removeItem(PLAYLISTS_KEY);
+  console.log("Cleared localStorage to force reload from data.json");
+
+  loadPlaylists().then(() => {
+    console.log("Playlists loaded:", playlists);
+    renderPlaylists();
+  });
 });
 
 
-// Event listeners for like/unlike buttons will be added after the playlists are loaded
+let body = document.querySelector("body")
+let pageid = body.id
 
 
-// window.addEventListener("DOMContentLoaded", () => {
-//     const playlistContainer = document.querySelector("#playlist-cards");
-
-//     if (!playlistContainer) {
-//         console.error("Playlist container not found!");
-//         return;
-//     }
-
-//     fetch("./data/data.json")
-//     .then(response => {
-//         if (!response.ok) {
-//             throw new Error(`HTTP error! Status: ${response.status}`);
-//         }
-//         return response.json();
-//     })
-//     .then(playlists => {
-//         console.log("Playlists loaded:", playlists); // Debug log
-
-//         if(!playlists || playlists.length === 0) {
-//             playlistContainer.innerHTML = "<p class='no-playlists'>No playlists found</p>";
-//             return;
-//         }
-
-//         // Clear existing hardcoded content
-//         playlistContainer.innerHTML = "";
-
-//         playlists.forEach(playlist => {
-//             const card = document.createElement("div");
-//             card.className = 'cards';
-//             card.innerHTML = `
-//             <article class="card-article">
-//                 <img src="${playlist.playlist_art}" alt="Playlist Art">
-//                 <div class="album-info">
-//                     <h3 class="playlist-title">${playlist.playlist_name}</h3>
-//                     <p class="artiste-name">${playlist.playlist_author}</p>
-//                     <div class="num-of-likes">
-//                         <span class="heart-button ${playlist.like_count > 0 ? 'liked' : 'unliked'}">❤️</span>
-//                         <span class="like-count">${playlist.like_count || 0}</span>
-//                     </div>
-//                 </div>
-//             </article>`;
-
-//             card.querySelector('.card-article').onclick = () => {
-//                 // Pass the entire playlist object to openModal
-//                 openModal(playlist);
-//             };
-//             playlistContainer.appendChild(card);
-//         });
-
-//         // Add event listeners for heart buttons
-//         playlistContainer.querySelectorAll('.heart-button').forEach(button => {
-//             button.addEventListener('click', function(event) {
-//                 event.stopPropagation();
-//                 const container = this.closest('.num-of-likes');
-//                 const likeCountElement = container.querySelector('.like-count');
-
-//                 if(likeCountElement) {
-//                     let count = parseInt(likeCountElement.textContent);
-
-//                     // Toggle liked/unliked state
-//                     if(this.classList.contains('liked')) {
-//                         // If already liked, unlike it
-//                         this.classList.remove('liked');
-//                         this.classList.add('unliked');
-//                         count = Math.max(0, count - 1); // Ensure count doesn't go below 0
-//                     } else {
-//                         // If unliked, like it
-//                         this.classList.remove('unliked');
-//                         this.classList.add('liked');
-//                         count++;
-//                     }
-
-//                     // Update the like count
-//                     likeCountElement.textContent = count;
-//                 }
-//             });
-//         });
-
-
-
-// })
-// .catch(err => {
-//     playlistContainer.innerHTML = '<p class="no-playlists">Failed to load playlists</p>';
-
-// });
-// });
