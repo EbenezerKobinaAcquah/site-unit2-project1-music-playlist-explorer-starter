@@ -55,7 +55,11 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site]([AD
 - [x] **Shuffle Songs**
   - [x] Enable users to shuffle the songs within a playlist using a shuffle button in the playlist's detail modal.
   - [x] When the shuffle button is clicked, the playlist's songs should display in a different order.
+
+
+
   - [x] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please show yourself shuffling the same playlist more than once.
+
 
 - [x] **Featured Page**
   - [x] Application includes a dedicated page that randomly selects and displays a playlist, showing the playlist’s:
@@ -67,9 +71,11 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site]([AD
       - [x] Duration
   - [x] When the page is refreshed or reloaded, a new random playlist is displayed
     - For example, navigating to the all playlists page and then back to the featured playlist page should result in a new random playlist being displayed
+
     - Note that because your algorithm will not be truly random, it is possible that the same playlist will feature twice in a row.
     - [x] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please show yourself refreshing the featured page more than once.
   - [x] Application includes a navigation bar or some other mechanism such that users can navigate to the page with all playlists from the featured page and vice versa without using the browser's back and forward buttons.
+
 
 #### STRETCH FEATURES
 
@@ -83,7 +89,9 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site]([AD
       - [x] Title
       - [x] Artist
   - [x] The resulting playlist should display in the grid view.
+
   - [x] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please show yourself adding at least two songs to the playlist.
+
 
 - [x] **Edit Existing Playlists**
   - [x] Enable users to modify the details of existing playlists.
@@ -97,12 +105,14 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site]([AD
     - [x] Editing all of a playlist's features (name, creator, AND songs)
     - [x] Editing some of a playlist's features (name, creator, OR songs)
 
+
 - [x] **Delete Playlists**
   - [x] Add a delete button to each playlist tile within the grid view.
   - [x] When clicked, the playlist is removed from the playlist grid view.
 
 - [x] **Search Functionality**
   - [x] Implement a search bar that allows users to filter playlists by:
+
     - [x] Name
     - [x] Author
   - [x] The search bar should include:
@@ -119,7 +129,11 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site]([AD
       - [x] If users can add a playlist, added playlists should be included in search results.
       - [x] If users can edit a playlist, search results should reflect the latest edits to each playlist.
       - [x] If users can delete a playlist, deleted playlists should no longer be included in search results.
+
       - **Note:** You will not be graded on the implementation of this optional subfeature to keep your grade of this stretch feature independent of your implementation of other stretch features. However, we highly suggest including this in your implementation to model realistic behavior of real applications.
+
+      - **Note:** You will not be graded on the implementation of this optional subfeature to keep your grade of this stretch feature independent of your implementation of other stretch features. However, we highly suggest including this in your implementation to model realistic behavior of real applications.
+
 
 - [x] **Sorting Options**
   - [x] Implement a drop-down or button options that allow users to sort the playlist by:
@@ -145,6 +159,7 @@ Fetching data from the json file and creating HTML elements with them
 I would have loved to add a backend to the playlist to store data
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+
 
 I
 
