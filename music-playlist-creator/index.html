@@ -12,7 +12,11 @@
 <body>
     <header id="header">
         <!-- Your header content here -->
-         <h1 id="main-heading">Listen to the Poet</h1>
+         <h1 id="main-heading">Music Playlist Explorer</h1>
+        <div class="navbar">
+            <p><a href="featured.html">features</p></a>
+            <p><a href="index.html">home</p></a>
+        </div>
     </header>
 
     <main>
@@ -132,13 +136,14 @@
 
          </section> -->
 
+
          <section class="playlist-cards" id="playlist-cards">
             <!-- Playlist cards will be dynamically loaded here -->
          </section>
     </main>
 
     <!-- Modal Structure -->
-     <div class="modal-overlay close">
+     <div class="modal-overlay">
 <div id="festivalModal" class="modal">
     <div class="modal-content">
        <span class="close">&times;</span>
@@ -147,6 +152,7 @@
        <div>
        <h1 id="festivalName"></h1>
        <p id="festivalDates"></p>
+       <button id="shuffleButton" class="shuffle-button">🔀 Shuffle Songs</button>
     </div>
     </div>
     <div class="modal-album-list">

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Featured Playlist - Music Explorer</title>
+</head>
+<body>
+    <header id="header">
+        <h1 id="main-heading">Music Playlist Explorer</h1>
+        <nav class="nav-bar">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="featured.html" class="active">Featured</a></li>
+                <li class="nav-item"><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="featured-container">
+            <h2 class="featured-heading">Featured Playlist</h2>
+
+            <div class="featured-content">
+                <!-- Left section: Enlarged playlist image and name -->
+                <section class="featured-playlist">
+                    <div class="featured-image-container">
+                        <img id="featured-img" src="./assets/img/playlist.png" alt="Featured Playlist" />
+                    </div>
+                    <h2 id="featured-playlist-name">Playlist Name</h2>
+                    <p id="featured-playlist-author">Artist Name</p>
+                    <div class="featured-playlist-stats">
+                        <span class="heart-button unliked">❤️</span>
+                        <span id="featured-like-count" class="like-count">0</span>
+                        <span class="featured-song-count">5 songs</span>
+                    </div>
+                </section>
+
+                <!-- Right section: Song list -->
+                <section class="featured-songs">
+                    <h3>Songs</h3>
+                    <div id="featured-songs-container">
+                        <!-- Songs will be dynamically added here -->
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <p>Copyright &copy; 2025 Music Playlist Explorer</p>
+        <p>Created by <a href="#">ebenezer</a></p>
+    </footer>
+
+    <script src="featured.js"></script>
+</body>
+</html>

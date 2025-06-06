@@ -3,15 +3,27 @@ const modal = document.getElementById("festivalModal");
 const modalOverlay = document.querySelector(".modal-overlay");
 const span = document.getElementsByClassName("close")[0];
 
-function openModal(playlist) {
-   // Update the modal header with the clicked album info
-   document.getElementById('festivalName').innerText = playlist.playlist_name;
-   document.getElementById('festivalImage').src = playlist.playlist_art;
-   document.getElementById('festivalDates').innerText = playlist.playlist_author;
+// Keep track of the current playlist for shuffling
+let currentPlaylist = null;
 
-   // Get the actual songs from the playlist
-   const songs = playlist.songs || [];
+// Fisher-Yates shuffle algorithm
+function shuffleArray(array) {
+   // Create a copy of the array to avoid modifying the original
+   const shuffled = [...array];
 
+   // Fisher-Yates shuffle algorithm
+   for (let i = shuffled.length - 1; i > 0; i--) {
+      // Generate a random index from 0 to i
+      const j = Math.floor(Math.random() * (i + 1));
+      // Swap elements at indices i and j
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+   }
+
+   return shuffled;
+}
+
+// Function to update the modal with songs
+function updateModalWithSongs(songs, playlistAuthor) {
    // Update all album list items
    const albumImgs = document.querySelectorAll(".modal-album-img");
    const albumTitles = document.querySelectorAll(".modal-album-title");
@@ -23,14 +35,41 @@ function openModal(playlist) {
    for (let i = 0; i < albumImgs.length && i < songs.length; i++) {
       albumImgs[i].src = songs[i].cover;
       albumTitles[i].innerText = songs[i].title;
-      albumArtists[i].innerText = playlist.playlist_author;
+      albumArtists[i].innerText = playlistAuthor;
       albumNames[i].innerText = songs[i].title;
       albumDurations[i].innerText = songs[i].duration;
    }
+}
+
+function openModal(playlist) {
+   // Store the current playlist for shuffling
+   currentPlaylist = playlist;
+
+   // Update the modal header with the clicked album info
+   document.getElementById('festivalName').innerText = playlist.playlist_name;
+   document.getElementById('festivalImage').src = playlist.playlist_art;
+   document.getElementById('festivalDates').innerText = playlist.playlist_author;
+
+   // Get the actual songs from the playlist
+   const songs = playlist.songs || [];
+
+   // Update the modal with songs
+   updateModalWithSongs(songs, playlist.playlist_author);
 
    // Show the modal overlay
    modalOverlay.style.display = "block";
 }
+
+// Add event listener for shuffle button
+document.getElementById('shuffleButton').addEventListener('click', function() {
+   if (currentPlaylist && currentPlaylist.songs) {
+      // Shuffle the songs
+      const shuffledSongs = shuffleArray(currentPlaylist.songs);
+
+      // Update the modal with shuffled songs
+      updateModalWithSongs(shuffledSongs, currentPlaylist.playlist_author);
+   }
+});
 
 span.onclick = function() {
    modalOverlay.style.display = "none";
@@ -79,8 +118,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     <h3 class="playlist-title">${playlist.playlist_name}</h3>
                     <p class="artiste-name">${playlist.playlist_author}</p>
                     <div class="num-of-likes">
-                        <span class="like-button" id="like">👍</span>
-                        <span class="unlike-button" id="unlike">👎</span>
+                        <span class="heart-button ${playlist.like_count > 0 ? 'liked' : 'unliked'}">❤️</span>
                         <span class="like-count">${playlist.like_count || 0}</span>
                     </div>
                 </div>
@@ -93,31 +131,34 @@ window.addEventListener("DOMContentLoaded", () => {
             playlistContainer.appendChild(card);
         });
 
-playlistContainer.querySelectorAll('.like-button').forEach(button => {
-    button.addEventListener('click', function(event) {
-        event.stopPropagation();
-        const container = this.closest('.num-of-likes, .num-of-like');
-        const likeCountElement = container.querySelector('.like-count');
-        if(likeCountElement) {
-            let count = parseInt(likeCountElement.textContent);
-            count++;
-            likeCountElement.textContent = count;
-        }});
+        // Add event listeners for heart buttons
+        playlistContainer.querySelectorAll('.heart-button').forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.stopPropagation();
+                const container = this.closest('.num-of-likes');
+                const likeCountElement = container.querySelector('.like-count');
 
-});
+                if(likeCountElement) {
+                    let count = parseInt(likeCountElement.textContent);
 
-playlistContainer.querySelectorAll('.unlike-button').forEach(button => {
-    button.addEventListener('click', function(event) {
-        event.stopPropagation();
-        const container = this.closest('.num-of-likes, .num-of-like');
-        const likeCountElement = container.querySelector('.like-count');
-        if(likeCountElement) {
-            let count = parseInt(likeCountElement.textContent);
-            count--;
-            likeCountElement.textContent = count;
-        }});
+                    // Toggle liked/unliked state
+                    if(this.classList.contains('liked')) {
+                        // If already liked, unlike it
+                        this.classList.remove('liked');
+                        this.classList.add('unliked');
+                        count = Math.max(0, count - 1); // Ensure count doesn't go below 0
+                    } else {
+                        // If unliked, like it
+                        this.classList.remove('unliked');
+                        this.classList.add('liked');
+                        count++;
+                    }
 
-});
+                    // Update the like count
+                    likeCountElement.textContent = count;
+                }
+            });
+        });
 
 
 
@@ -127,6 +168,3 @@ playlistContainer.querySelectorAll('.unlike-button').forEach(button => {
 
 });
 });
-
-
-
