@@ -13,9 +13,9 @@
     <header id="header">
         <!-- Your header content here -->
          <h1 id="main-heading">Music Playlist Explorer</h1>
-        <div class="navbar">
-            <p><a href="featured.html">features</p></a>
-            <p><a href="index.html">home</p></a>
+         <div class="navbar">
+            <p><a href="index.html">Home</a></p>
+            <p><a href="featured.html">Featured</a></p>
         </div>
     </header>
 
@@ -135,6 +135,43 @@
         </div>
 
          </section> -->
+
+         <!-- Search and sort controls  here -->
+
+         <section class="controls" >
+            <input type="text" id="searchBar" placeholder="Search playlists by name or author...">
+            <select id="sortDropdown">
+                <option value="date">Sort by Date</option>
+                <option value="name">Sort by Name</option>
+                <option value="likes">Sort likes</option>
+            </select>
+            <button id="addPlaylistBtn"> + Add Playlist</button>
+         </section>
+
+
+        <div id="playlistModal" class="modal" style="display:none;">
+         <div class="modal-content">
+             <span class="close" id="closePlaylistModal">&times;</span>
+             <h2 id="modalTitle">Add Playlist</h2>
+             <form id="playlistForm">
+                 <label for="playlistName">Playlist Name:</label>
+                 <input type="text" id="playlistName" name="playlistName" required>
+                 <label for="playlistAuthor">Author:</label>
+                 <input type="text" id="playlistAuthor" name="playlistAuthor" required>
+                 <label for="playlistCover">Cover Image URL:</label>
+                 <input type="url" id="playlistCover" name="playlistCover" placeholder="https://...">
+                 <small id="coverHelp" style="color:#3a4a6b;display:block;margin-bottom:8px;">Required when adding a new playlist. Leave blank to keep current cover when editing.</small>
+                 <div id="songsContainer">
+                     <h3>Songs</h3>
+                     <!-- Song fields will be added here -->
+                 </div>
+                 <button type="button" id="addSongBtn">+ Add Song</button>
+                 <div style="margin-top: 1em;">
+                     <button type="submit" id="savePlaylistBtn">Save Playlist</button>
+                 </div>
+             </form>
+         </div>
+     </div>
 
 
          <section class="playlist-cards" id="playlist-cards">
