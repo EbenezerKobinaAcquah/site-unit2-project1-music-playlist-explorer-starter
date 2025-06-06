@@ -21,7 +21,11 @@
 
     <main>
          <section class="controls" >
-            <input type="text" id="searchBar" placeholder="Search playlists by name or author...">
+            <div class="search-container">
+                <input type="text" id="searchBar" placeholder="Search playlists by name or author...">
+                <button id="searchBtn" title="Search"><i class="search-icon">🔍</i></button>
+                <button id="clearSearchBtn" title="Clear Search"><i class="clear-icon">✖</i></button>
+            </div>
             <select id="sortDropdown">
                 <option value="date">Sort by Date</option>
                 <option value="name">Sort by Name</option>

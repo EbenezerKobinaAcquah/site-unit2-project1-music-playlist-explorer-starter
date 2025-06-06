@@ -246,6 +246,11 @@ function renderPlaylists() {
     const realIdx = playlists.indexOf(playlist);
     const card = document.createElement('div');
     card.className = 'cards';
+    // Check if this is the Graduation playlist (ID 2) and set liked state based on liked_by_user property
+    const isLiked = playlist.playlistID === 2 ?
+      (playlist.liked_by_user || false) :
+      (playlist.like_count > 0);
+
     card.innerHTML = `
       <article class="card-article">
         <img src="${playlist.playlist_art}" alt="Playlist Art">
@@ -253,7 +258,7 @@ function renderPlaylists() {
           <h3 class="playlist-title">${playlist.playlist_name}</h3>
           <p class="artiste-name">${playlist.playlist_author}</p>
           <div class="num-of-likes">
-            <span class="heart-button ${playlist.like_count > 0 ? 'liked' : 'unliked'}">❤️</span>
+            <span class="heart-button ${isLiked ? 'liked' : 'unliked'}">❤️</span>
             <span class="like-count">${playlist.like_count || 0}</span>
           </div>
           <button class="editPlaylistBtn">Edit</button>
@@ -283,15 +288,35 @@ function renderPlaylists() {
     // Like
     card.querySelector('.heart-button').onclick = function(e) {
       e.stopPropagation();
-      if (this.classList.contains('liked')) {
-        this.classList.remove('liked');
-        this.classList.add('unliked');
-        playlist.like_count = Math.max(0, (playlist.like_count || 0) - 1);
+
+      // Special handling for Graduation playlist (ID 2)
+      if (playlist.playlistID === 2) {
+        // Toggle liked state
+        playlist.liked_by_user = !playlist.liked_by_user;
+
+        // Update visual state
+        if (playlist.liked_by_user) {
+          this.classList.remove('unliked');
+          this.classList.add('liked');
+          playlist.like_count = 6; // Initial (5) + 1
+        } else {
+          this.classList.remove('liked');
+          this.classList.add('unliked');
+          playlist.like_count = 5; // Back to initial
+        }
       } else {
-        this.classList.remove('unliked');
-        this.classList.add('liked');
-        playlist.like_count = (playlist.like_count || 0) + 1;
+        // Normal handling for other playlists
+        if (this.classList.contains('liked')) {
+          this.classList.remove('liked');
+          this.classList.add('unliked');
+          playlist.like_count = 0;
+        } else {
+          this.classList.remove('unliked');
+          this.classList.add('liked');
+          playlist.like_count = 1;
+        }
       }
+
       savePlaylists();
       renderPlaylists();
     };
@@ -300,7 +325,32 @@ function renderPlaylists() {
 }
 
 // --- Search & Sort Events ---
-searchBar.oninput = renderPlaylists;
+// Get the search and clear buttons
+const searchBtn = document.getElementById('searchBtn');
+const clearSearchBtn = document.getElementById('clearSearchBtn');
+
+// Search functionality
+function performSearch() {
+  renderPlaylists();
+}
+
+// Clear search functionality
+function clearSearch() {
+  searchBar.value = '';
+  renderPlaylists();
+}
+
+// Event listeners for search
+searchBar.addEventListener('keypress', function(e) {
+  if (e.key === 'Enter') {
+    performSearch();
+  }
+});
+
+searchBtn.addEventListener('click', performSearch);
+clearSearchBtn.addEventListener('click', clearSearch);
+
+// Sort dropdown event
 sortDropdown.onchange = renderPlaylists;
 
 // --- Initial Load ---
@@ -318,5 +368,3 @@ window.addEventListener('DOMContentLoaded', () => {
 
 let body = document.querySelector("body")
 let pageid = body.id
-
-

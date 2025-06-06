@@ -40,7 +40,9 @@
         "playlist_name": "Graduation",
         "playlist_author": "Kanye West",
         "playlist_art": "./assets/img/graduation.jpg",
-        "like_count": 0,
+        "like_count": 5,
+        "initial_like_count": 5,
+        "liked_by_user": false,
         "songs": [
             {
                 "title": "Flashing Lights",
