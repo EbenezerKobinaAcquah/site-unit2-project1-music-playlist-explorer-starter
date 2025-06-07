@@ -117,8 +117,8 @@ Deployed Application (**required**): https://site-unit2-project1-music-playlist-
     - [x] Author
   - [x] The search bar should include:
     - [x] Text input field
-    - [ ] Submit/Search Button
-    - [ ] Clear Button
+    - [x] Submit/Search Button
+    - [x] Clear Button
   - [x] Playlists matching the search query in the text input are displayed in a grid view when the user:
     - [x] Presses the Enter Key
     - [x] Clicks the Submit/Search Button
