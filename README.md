@@ -4,7 +4,7 @@ Submitted by: **Ebenezer Kobina Acquah**
 
 Estimated time spent: **12** hours spent in total
 
-Deployed Application (**required**): [Music Playlist Explorer Deployed Site]([ADD_LINK_HERE](https://site-unit2-project1-music-playlist-idq1.onrender.com/index.html))
+Deployed Application (**required**): https://site-unit2-project1-music-playlist-idq1.onrender.com/index.html
 
 ### Application Features
 
