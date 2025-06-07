@@ -156,7 +156,7 @@ Fetching data from the json file and creating HTML elements with them
 I would have loved to add a backend to the playlist to store data
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
-
+Cascading Style Sheet is so not good!
 
 I
 
@@ -167,4 +167,5 @@ I
 ### Shout out
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+
 Shout out to Joie for the timely reminder of the like count.
