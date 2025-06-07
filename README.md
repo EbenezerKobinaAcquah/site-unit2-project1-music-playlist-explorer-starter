@@ -144,8 +144,7 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site]([AD
 
 ### Walkthrough Video
 
-<div style="position: relative; padding-bottom: 55.41666666666667%; height: 0;"><iframe src="https://www.loom.com/embed/d1862b79371e4775a780ad690878f200?sid=48fed97b-45f9-494c-849a-5be975a318cc" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-
+https://www.loom.com/share/d1862b79371e4775a780ad690878f200?sid=a98d61cf-51da-496c-b0a1-e75b226b6682
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
